@@ -1,0 +1,88 @@
+/** Bootstrap overrides **/
+ul.nav {
+  float: right;
+}
+ul.nav li {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  background: transparent;
+}
+
+.navbar-nav a {
+  color: #000;
+}
+
+/** lamp list **/
+.lamp-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lamp-item {
+  font-size: 2rem;      
+  display: table;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.lamp-item:hover {
+  cursor: pointer;
+}
+
+.lamp-name {
+  width: 60%;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+.lamp-item--three-actions .lamp-name {
+  width: 40%;
+}
+
+.lamp-action {
+  text-transform: uppercase;
+  text-align: center;
+  width: 20%;
+  overflow: hidden;
+  color: rgba(0,0,0,0.4);
+  opacity: 0.75;
+}
+.lamp-action:hover {
+  opacity: 1;
+}
+
+.lamp-action--on {
+  background: #6ac06a;
+}
+
+.lamp-action--off {
+  background: #dfdfdf;
+}
+
+.lamp-action--delete {
+  background: #d08f8f;
+}
+
+/** Helper classes **/
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media only screen and (max-width : 600px) {
+  .lamp-action span {
+    font-size: 0;
+  }
+
+  .lamp-action span:before {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,15 @@
+<div ng-if="serverError == true">
+	<p class="alert alert-danger">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		<span class="sr-only">Error:</span>
+		Oops! Seems like the server cannot be reached. Check <a href="#config">config</a> and make sure you have network access.
+	</p>
+</div>
+<ul class="lamp-list" id="lamp-list">
+	<li class="lamp-item" ng-repeat="lamp in lampList" ng-swipe-left="displayAllActions = featureFlags.deleteItems ? true : false" ng-swipe-right="displayAllActions = false" ng-hide="isHidden" ng-class="displayAllActions ? 'lamp-item--three-actions' : ''">
+		<div class="table-cell lamp-name">{{lamp.name}}</div>
+		<div class="table-cell lamp-action lamp-action--on" ng-click="switchLamp({'action':'on', 'id':lamp.id})"><span class="fa fa-toggle-on"> on</span></div>
+		<div class="table-cell lamp-action lamp-action--off" ng-click="switchLamp({'action':'off', 'id':lamp.id})"><span class="fa fa-toggle-off"> off</span></div>
+		<div class="table-cell lamp-action lamp-action--delete" ng-show="displayAllActions" ng-click="onDelete({'id':lamp.id}); isHidden = true"><span class="fa fa-trash-o"> delete</span></div>
+	</li>
+</ul>
